@@ -43,5 +43,10 @@ The main function sets up the Flask application and CORS, reads the configuratio
 ## Usage
 Use the /register endpoint to register a new user by sending a POST request with the user's biometric information in the bio_info field of the request data.
 Use the /verify endpoint to verify a registered user's UID by sending a POST request with the UID in the uid field of the request data.
+
+# Demo video on Youtube
+Pramaan : ZKP based Decentralisation authentication: Product Demo
+https://www.youtube.com/watch?v=hIcd4nvLZuE 
+
 # Conclusion
 This codebase presents a secure, practical solution for identity verification. Its implementation of cryptography and zero-knowledge proofs enables strong security for user identities.
