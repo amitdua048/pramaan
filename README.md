@@ -48,5 +48,53 @@ Use the /verify endpoint to verify a registered user's UID by sending a POST req
 Pramaan : ZKP based Decentralisation authentication: Product Demo
 https://www.youtube.com/watch?v=hIcd4nvLZuE 
 
+# sample input/ output
+Sample Input:
+## 1. Register a new user:
+Suppose a user's biometric information is as follows:
+{
+    "name": "John Doe",
+    "DOB": "1980-01-01",
+    "FingerPrint": "ABCXYZ123",
+    "RetinaScan": "XYZABC456"
+}
+
+make a POST request to the /register endpoint with the above JSON data. 
+
+POST /register
+Content-Type: application/json
+{
+    "bio_info": {
+        "name": "John Doe",
+        "DOB": "1980-01-01",
+        "FingerPrint": "ABCXYZ123",
+        "RetinaScan": "XYZABC456"
+    }
+}
+## 2. Verify a registered user:
+Suppose you want to verify the registered user, and you know that their UID is "00001".
+
+You would make a POST request to the /verify endpoint with the UID. Here is how it might look:
+
+POST /verify
+Content-Type: application/json
+{
+    "uid": "00001"
+}
+
+# Sample Output:
+## 1. Register a new user:
+The /register endpoint might respond with the generated UID:
+
+{
+    "Generated UID": "00001"
+}
+## 2. Verify a registered user:
+The /verify endpoint might respond with the verification result:
+{
+    "Verification Result": "Success"
+}
+
+
 # Conclusion
 This codebase presents a secure, practical solution for identity verification. Its implementation of cryptography and zero-knowledge proofs enables strong security for user identities.
